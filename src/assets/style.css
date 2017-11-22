@@ -16,6 +16,17 @@ span.message {
   margin-bottom: 1.5em;
 }
 
+table.in-metadata{
+  margin-top: 1em;
+}
+
+td.value-style{
+  font-weight: bold;
+}
+td.description-style{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 footer {
   margin-top: 10em;
 }

@@ -124,15 +124,6 @@ const Variable = React.createClass({
           }
           </span>
         </p>
-        { variable.possibleValues
-          ? <p>
-            <FormattedHTMLMessage id="authorizedValues"/>
-              <ul>
-              { variable.possibleValues.map(value => <li>"{value}"</li>)}
-              </ul>
-            </p>
-          : null
-        }
         <p>
           <FormattedMessage id="defaultValueParagraph"
             values={{ defaultValueLink:
@@ -146,6 +137,38 @@ const Variable = React.createClass({
           </span>
           .
         </p>
+        { variable.possibleValues
+          ? <div>
+            <FormattedHTMLMessage id="authorizedValues"/>
+              <table className="table table-bordered table-hover table-striped in-metadata">
+                <thead>
+                  <tr>
+                    <th>Valeurs</th>
+                    <th>Descriptions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                  Object.keys(variable.possibleValues).map((keyword) => {
+                    const nameOfKeyword = keyword
+                    const description = variable.possibleValues[keyword]
+                    return (
+                      <tr>
+                        <td className="value-style">
+                          <samp>{keyword}</samp>
+                        </td>
+                        <td className="description-style">
+                          <samp>{description}</samp>
+                        </td>
+                      </tr>
+                        )
+                      })
+                  }
+                </tbody>
+                </table>
+            </div>
+          : null
+        }
           { variable.references &&
             (<span><FormattedHTMLMessage id="referencesText"/></span>)
           }
