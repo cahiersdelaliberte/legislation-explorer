@@ -22,7 +22,7 @@ dependencies:
 
 test:
   pre:
-    - source ~/virtualenv/bin/activate && npm run openfisca:
+    - source ~/virtualenv/bin/activate && openfisca serve -p 2000:
         background: true
         parallel: true
     - npm start:
