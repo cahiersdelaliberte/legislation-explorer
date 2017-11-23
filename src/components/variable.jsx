@@ -150,15 +150,13 @@ const Variable = React.createClass({
                 <tbody>
                   {
                   Object.keys(variable.possibleValues).map((keyword) => {
-                    const nameOfKeyword = keyword
-                    const description = variable.possibleValues[keyword]
                     return (
                       <tr>
                         <td className="value-style">
                           <samp>{keyword}</samp>
                         </td>
                         <td className="description-style">
-                          <samp>{description}</samp>
+                          <samp>{variable.possibleValues[keyword]}</samp>
                         </td>
                       </tr>
                         )
