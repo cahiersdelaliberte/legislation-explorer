@@ -18,14 +18,10 @@ dependencies:
     - source ~/virtualenv/bin/activate && pip install --upgrade pip
     - source ~/virtualenv/bin/activate && pip install --editable git+https://github.com/openfisca/openfisca-core.git@enums#egg=OpenFisca-Core
     - source ~/virtualenv/bin/activate && pip install --editable git+https://github.com/openfisca/openfisca-france.git@enums-2#egg=OpenFisca-France
-    - npm run build
 
 test:
   pre:
     - source ~/virtualenv/bin/activate && openfisca serve -p 2000:
-        background: true
-        parallel: true
-    - npm start:
         background: true
         parallel: true
     # start Sauce Connect
@@ -43,6 +39,10 @@ test:
         parallel: true
 
   override:
+    - npm run build
+    - npm start:
+        background: true
+        parallel: true
     - npm test:
         parallel: true
 
