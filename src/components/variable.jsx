@@ -143,8 +143,8 @@ const Variable = React.createClass({
               <table className="table table-bordered table-hover table-striped in-metadata">
                 <thead>
                   <tr>
-                    <th>Valeurs</th>
-                    <th>Descriptions</th>
+                    <th><FormattedHTMLMessage id="keyword"/></th>
+                    <th><FormattedHTMLMessage id="definition"/></th>
                   </tr>
                 </thead>
                 <tbody>
