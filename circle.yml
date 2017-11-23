@@ -40,7 +40,7 @@ test:
         parallel: true
 
   override:
-    - npm start:
+    - npm run dev:
         background: true
         parallel: true
     - npm test:
