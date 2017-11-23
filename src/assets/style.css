@@ -1,3 +1,4 @@
+
 tr.first-bracket:not(:first-child) > td {
   border-top-width: 5px;
 }
@@ -22,9 +23,6 @@ table.in-metadata{
 
 td.value-style{
   font-weight: bold;
-}
-td.description-style{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 footer {
