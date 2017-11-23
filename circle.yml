@@ -18,9 +18,7 @@ dependencies:
     - source ~/virtualenv/bin/activate && pip install --upgrade pip
     - source ~/virtualenv/bin/activate && pip install --editable git+https://github.com/openfisca/openfisca-core.git@enums#egg=OpenFisca-Core
     - source ~/virtualenv/bin/activate && pip install --editable git+https://github.com/openfisca/openfisca-france.git@enums-2#egg=OpenFisca-France
-    - source ~/virtualenv/bin/activate && openfisca serve -p 2000
-    background: true
-    - npm run build
+    - source ~/virtualenv/bin/activate && npm run openfisca
 
 test:
   pre:
