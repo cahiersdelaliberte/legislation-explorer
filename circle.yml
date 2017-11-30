@@ -6,8 +6,8 @@ machine:
     WATAI_TESTS: tests/integration
     SAUCE_USERNAME: openfisca
     # SAUCE_ACCESS_KEY is defined in the CircleCI web UI
-    PORT: 2000 # Legislation Explorer ExpressJS server port
-    API_URL: 2030
+    PORT: 2030 # Legislation Explorer ExpressJS server port
+    API_URL: 2000
 
 dependencies:
   post:
@@ -18,11 +18,13 @@ dependencies:
     - source ~/virtualenv/bin/activate && pip install --upgrade pip
     - source ~/virtualenv/bin/activate && pip install --editable git+https://github.com/openfisca/openfisca-core.git@enums#egg=OpenFisca-Core
     - source ~/virtualenv/bin/activate && pip install --editable git+https://github.com/openfisca/openfisca-france.git@enums-2#egg=OpenFisca-France
-    - npm run build
 
 test:
   pre:
     - source ~/virtualenv/bin/activate && openfisca serve -p $API_URL:
+        background: true
+        parallel: true
+    - npm run build:
         background: true
         parallel: true
     # start Sauce Connect
@@ -34,6 +36,9 @@ test:
         parallel: true
     # wait for server (after Sauce Connect because it is faster to start)
     - wget --retry-connrefused --waitretry=1 --output-document=/dev/null http://localhost:$API_URL/variables:
+        parallel: true
+    # wait for server (after Sauce Connect because it is faster to start)
+    - wget --retry-connrefused --waitretry=1 --output-document=/dev/null http://localhost:$PORT/:
         parallel: true
     # prepare CI-specific config holder and add CI-specific config to Watai
     - mkdir $HOME/.watai && cp $WATAI_TESTS/config-ci.js $HOME/.watai/config.js:
