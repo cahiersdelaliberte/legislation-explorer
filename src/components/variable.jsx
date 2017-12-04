@@ -152,10 +152,10 @@ const Variable = React.createClass({
                   Object.keys(variable.possibleValues).map((keyword) => {
                     return (
                       <tr>
-                        <td className="value-style">
+                        <td className="list-entry">
                           <samp>{keyword}</samp>
                         </td>
-                        <td className="description-style">
+                        <td>
                           <samp>{variable.possibleValues[keyword]}</samp>
                         </td>
                       </tr>
