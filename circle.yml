@@ -17,7 +17,7 @@ dependencies:
     - tar -xzf sc-4.4.9-linux.tar.gz
     - virtualenv --python=python2 ~/virtualenv
     - source ~/virtualenv/bin/activate && pip install --upgrade pip
-    - source ~/virtualenv/bin/activate && pip install openfisca-core=$API_VERSION
+    - source ~/virtualenv/bin/activate && pip install openfisca-core==$API_VERSION
     - source ~/virtualenv/bin/activate && pip install git+https://github.com/openfisca/openfisca-france.git@enums-2#egg=OpenFisca-France # remove once merged
     - npm run build
 test:
