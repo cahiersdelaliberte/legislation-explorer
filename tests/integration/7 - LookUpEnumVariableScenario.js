@@ -5,6 +5,7 @@ steps: [
   AppComponent.goToFirstResult(),
   {
     "VariableComponent.title": enumVariableTitle,
+    "VariableComponent.defaultValue": enumVariableDefault,
   },
   VariableComponent.goBack(),
 ]
