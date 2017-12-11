@@ -4,7 +4,7 @@ steps: [
   SearchBarComponent.searchFor(enumVariableQuery),
   AppComponent.goToFirstResult(),
   {
-    "VariableComponent.firstPossibleValue": enumVariableFirstValue,
+    "VariableComponent.title": enumVariableTitle,
   },
   VariableComponent.goBack(),
 ]
