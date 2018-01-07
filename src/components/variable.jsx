@@ -21,13 +21,15 @@ const Variable = React.createClass({
     return new Date().toJSON().slice(0, 10)
   },
   render() {
-    const { variable } = this.props
+    const { variable, arabic_descriptions } = this.props
+
     return (
       <DocumentTitle title={ `${ variable.id } - Explorateur de la législation` } >
         <div>
           <header className="page-header">
             <h1><code>{ variable.id }</code></h1>
             <p className="description">{variable.description}</p>
+            <p className="description">{arabic_descriptions[variable.id]}</p>
           </header>
           {this.renderVariableMetadata(variable)}
           <div>

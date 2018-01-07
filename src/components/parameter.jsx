@@ -16,11 +16,12 @@ const Parameter = React.createClass({
     parameter: AppPropTypes.parameter.isRequired,
   },
   render() {
-    const {parameter} = this.props
+    const { parameter, arabic_descriptions } = this.props
     const description = parameter.description || "Aucune description"
     const isScale = (! parameter.values)
     //Add word break opportunities before dots for long parameter id
     const multilineId = parameter.id.replace(/\./g, '<wbr>.')
+    const arabicDescription = arabic_descriptions[parameter.id]
 
     return (
       <DocumentTitle title={`${parameter.id} - Explorateur de la législation`}>
@@ -28,6 +29,7 @@ const Parameter = React.createClass({
           <header className="page-header">
             <h1><code dangerouslySetInnerHTML={{__html: multilineId}}></code></h1>
             <p className="description">{description}</p>
+            arabicDescription && <p className="description">{arabicDescription}</p>
           </header>
           <div className="row">
             <div className="col-lg-8">

@@ -58,12 +58,14 @@ Promise.all([fetchParameters(), fetchVariables(), fetchSwagger()])
     )
 
     const messages = loadTranslations(path.join(__dirname, "../assets/lang/"))
+    const arabic_descriptions = require("../../../openfisca-tunisia/openfisca_tunisia/assets/lang/ar.json")
 
     const state = {
       countryPackageName: variablesResponse['country-package'],
       countryPackageVersion: variablesResponse['country-package-version'],
       parameters: normalizedParameters,
       variables: normalizedVariables,
+      arabic_descriptions: arabic_descriptions,
       swaggerSpec: swaggerResponse.data,
       messages: messages,
     }

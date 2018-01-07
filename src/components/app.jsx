@@ -38,7 +38,7 @@ const App = React.createClass({
     }
   },
   getInitialState() {
-    const {location, parameters, variables} = this.props
+    const {location, parameters, variables, arabic_descriptions} = this.props
     const searchQuery = location.query.q || ""
     return {
       searchQuery,
@@ -49,7 +49,7 @@ const App = React.createClass({
     return this.props.location.pathname == route
   },
   render() {
-    const {countryPackageName, countryPackageVersion, parameters, variables} = this.props
+    const {countryPackageName, countryPackageVersion, parameters, variables, arabic_descriptions} = this.props
     return (
       <DocumentTitle title="Explorateur de la législation">
         <div>

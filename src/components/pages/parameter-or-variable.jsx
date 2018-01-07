@@ -29,13 +29,15 @@ const ParameterOrVariablePage = React.createClass({
     if (this.props.variables[name]) {
       fetchVariable(name).then(
         variable => {
-          this.setState({variable: variable.data, waitingForResponse: false})
+          this.setState({variable: variable.data, 
+            arabic_descriptions: this.props.arabic_descriptions, waitingForResponse: false})
         }
       )
     } else if (this.props.parameters[name]) {
       fetchParameter(name).then(
         parameter => {
-          this.setState({parameter: parameter.data, waitingForResponse: false})
+          this.setState({parameter: parameter.data, 
+            arabic_descriptions: this.props.arabic_descriptions, waitingForResponse: false})
         }
       )
     } else {
@@ -59,7 +61,7 @@ const ParameterOrVariablePage = React.createClass({
 
   render() {
     const { searchQuery, searchResults } = this.context
-    const {countryPackageName, countryPackageVersion, parameters, variables} = this.props
+    const {countryPackageName, countryPackageVersion, parameters, variables, arabic_descriptions} = this.props
     const {parameter, variable} = this.state
     const goBackLocation = {
       pathname: "/",
@@ -91,6 +93,7 @@ const ParameterOrVariablePage = React.createClass({
               countryPackageName={countryPackageName}
               countryPackageVersion={countryPackageVersion}
               parameter={parameter}
+              arabic_descriptions={arabic_descriptions}
             />
           )
         }
@@ -102,6 +105,7 @@ const ParameterOrVariablePage = React.createClass({
               parameters={parameters}
               variable={variable}
               variables={variables}
+              arabic_descriptions={arabic_descriptions}
             />
           )
         }
