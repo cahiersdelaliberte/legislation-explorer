@@ -72,7 +72,7 @@ const App = React.createClass({
                     <span className="message">
                       <FormattedMessage id="header"/>
                       <small>
-                        <ExternalLink href="https://www.openfisca.fr" target="_blank">
+                        <ExternalLink href="http://www.openfisca.org" target="_blank">
                           <FormattedMessage id="learnMore"/>
                         </ExternalLink>
                       </small>
@@ -94,7 +94,8 @@ const App = React.createClass({
                                     parametersCount: Object.keys(parameters).length
                                   }}
                                 /></strong>
-                              </Link>
+                              </Link>,
+                            countryPackageName: countryPackageName
                           }}
                         />
                       </small>
