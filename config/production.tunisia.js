@@ -1,7 +1,7 @@
 // App config in a production environment.
 
-const HOST = process.env.HOST || 'api.openfisca.tn',
-  apiBaseUrl = process.env.API_URL || `https://${HOST}`,
+const HOST = process.env.HOST || 'https://www.openfisca.tn'
+  apiBaseUrl = process.env.API_URL || 'https://www.openfisca.tn/api/v0.13.0',
   gitHubProject = 'openfisca/openfisca-tunisia',
   gitWebpageUrl = 'https://github.com/openfisca/legislation-explorer',
   piwikConfig = {
