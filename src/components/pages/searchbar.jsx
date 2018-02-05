@@ -39,7 +39,7 @@ const SearchBarComponent = React.createClass({
             <input
               className="form-control"
               id={searchInputId}
-              placeholder="smic, salaire net…"
+              placeholder="cotisation, salaire net…"
               type="text"
               onChange={this.handleInputChange}
               value={inputValue}
