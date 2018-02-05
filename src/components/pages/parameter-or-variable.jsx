@@ -1,5 +1,6 @@
 import React, { PropTypes } from "react"
 import { Link, locationShape, routerShape } from "react-router"
+import {FormattedMessage} from "react-intl"
 
 import * as AppPropTypes from "../../app-prop-types"
 import Parameter from "../parameter"
@@ -80,8 +81,9 @@ const ParameterOrVariablePage = React.createClass({
             do {
               const count = searchResults.length - 1
               count > 1
-                ? `Voir les ${count} autres variables et paramètres`
-                : "Voir la page de recherche"
+                ? <FormattedMessage id="backToFindResult" 
+                    values={{ findResultCount: count }}/>
+                : <FormattedMessage id="backToFindPage"/>
             }
           }
         </Link>
