@@ -61,7 +61,7 @@ function renderHtmlDocument(renderProps, state) {
   let externalCss = [bootstrapCss, '/swagger-ui.css', '/github-gist.css', '/style.css']
   if (process.env.NODE_ENV === "development") {
     externalCss = externalCss.map(
-      value => "http://localhost:2031" + value // FIXME: the port should not be hard-coded.
+      value => "http://localhost:3031" + value // FIXME: the port should not be hard-coded.
     )
   }
   const css = webpackAssets.main.css.concat(externalCss)
