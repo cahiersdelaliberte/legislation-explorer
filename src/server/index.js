@@ -37,8 +37,8 @@ function startServer(state) {
     }
   })
 
-  const host = process.env.HOST || 'localhost'
-  const port = process.env.PORT || 2030
+  const host = process.env.HOST || "localhost"
+  const port = process.env.PORT || 3030
   server.listen(port, host, () => {
     console.log(`Server listening at http://${host}:${port}/`)
   })
